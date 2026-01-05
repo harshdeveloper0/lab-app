@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+.pdf-safe * {
+  color: #000 !important;
+  border-color: #000 !important;
+  background-color: transparent !important;
+}
+
+/* Allow table headers */
+.pdf-safe thead {
+  background-color: #e5e7eb !important; /* light gray */
+}
