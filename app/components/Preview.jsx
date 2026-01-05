@@ -1,7 +1,5 @@
 "use client";
-
 import VetReport from "./VetReport";
-
 export default function PreviewPage() {
   return (
     <>
@@ -14,7 +12,6 @@ export default function PreviewPage() {
           Download PDF
         </button>
       </div>
-
       {/* REPORT */}
       <div className="bg-white">
         <VetReport />

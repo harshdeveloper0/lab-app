@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import reportData from "../data/reportData";
+import Image from "next/image";
 
 export default function VetReport() {
   const today = new Date().toLocaleDateString("en-GB");
@@ -22,6 +23,7 @@ export default function VetReport() {
     patientDetails = {},
     hematology = {},
     bloodSmearHaemoprotozoan = {},
+    biochemistry = {},
     reportFooter = {},
   } = data || {};
 
@@ -95,17 +97,81 @@ export default function VetReport() {
 
       <div className="relative z-10">
         {/* HEADER */}
-        <div className="text-center border-b-2 border-blue-900 pb-4 mb-6">
-          <h1 className="text-3xl font-bold text-blue-900 uppercase">
-            {header.labName}
-          </h1>
-          <p className="italic text-gray-600">{header.tagline}</p>
-          <p className="text-xs mt-1">{header.address}</p>
-          <p className="font-semibold text-sm mt-1">
-            {header.contact?.mobile?.join(" / ")} | {header.contact?.email}
-          </p>
-        </div>
+       {/* HEADER */}
+<div className="text-center border-b-2 border-blue-900 pb-4 mb-6">
+  {/* LOGO */}
+  <div className="flex justify-center mb-2">
+    <Image
+      src="/logo.png"
+      alt="Lab Logo"
+      width={120}
+      height={120}
+      priority
+      className="object-contain"
+    />
+  </div>
 
+  {/* LAB NAME */}
+  <input
+    value={header.labName || ""}
+    onChange={(e) => {
+      const n = structuredClone(data);
+      n.header.labName = e.target.value;
+      setData(n);
+    }}
+    className="text-3xl font-bold text-blue-900 uppercase text-center w-full bg-transparent outline-none"
+  />
+
+  {/* TAGLINE */}
+  <input
+    value={header.tagline || ""}
+    onChange={(e) => {
+      const n = structuredClone(data);
+      n.header.tagline = e.target.value;
+      setData(n);
+    }}
+    className="italic text-gray-600 text-center w-full bg-transparent outline-none mt-1"
+  />
+
+  {/* ADDRESS */}
+  <textarea
+    rows={2}
+    value={header.address || ""}
+    onChange={(e) => {
+      const n = structuredClone(data);
+      n.header.address = e.target.value;
+      setData(n);
+    }}
+    className="text-xs text-center w-full bg-transparent outline-none resize-none mt-1"
+  />
+
+  {/* CONTACT */}
+  <div className="text-sm font-semibold mt-1 flex justify-center gap-2">
+    <input
+      value={header.contact?.mobile?.join(" / ") || ""}
+      onChange={(e) => {
+        const n = structuredClone(data);
+        n.header.contact.mobile = e.target.value
+          .split("/")
+          .map((m) => m.trim());
+        setData(n);
+      }}
+      className="bg-transparent outline-none text-center w-64"
+    />
+    <span>|</span>
+    <input
+      value={header.contact?.email || ""}
+      onChange={(e) => {
+        const n = structuredClone(data);
+        n.header.contact.email = e.target.value;
+        setData(n);
+      }}
+      className="bg-transparent outline-none text-center w-64"
+    />
+  </div>
+</div>
+
+        
         {/* PATIENT DETAILS */}
         <div className="grid grid-cols-2 gap-y-2 gap-x-6 border p-4 bg-gray-50 rounded mb-6 text-sm">
           <p>
@@ -219,16 +285,13 @@ export default function VetReport() {
             />
           </p>
         </div>
-
         {/* HEMATOLOGY */}
         <h2 className="text-center font-bold text-xl underline mb-2">
           HEMATOLOGY
         </h2>
-
         <h2 className="text-green-700 underline mb-2">
           Complete Blood Count <br /> Erythrocytes
         </h2>
-
         <table className="w-full mb-6 border">
           <thead className="bg-purple-400">
             <tr>
@@ -247,6 +310,24 @@ export default function VetReport() {
           </tbody>
         </table>
 
+        {/* BIOCHEMISTRY */}
+        <h2 className="text-center font-bold text-xl underline mb-2">
+          BIOCHEMISTRY
+        </h2>
+
+        <table className="w-full mb-6 border">
+          <thead className="bg-green-400">
+            <tr>
+              <th>Test</th>
+              <th>Result</th>
+              <th>Unit</th>
+              <th>Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            {renderRows("biochemistry", "serumTests", biochemistry.serumTests)}
+          </tbody>
+        </table>
         {/* THROMBOCYTES */}
         <h2 className="text-green-700 underline">THROMBOCYTES</h2>
         <table className="w-full mb-6 border">
@@ -254,7 +335,6 @@ export default function VetReport() {
             {renderRows("hematology", "thrombocytes", hematology.thrombocytes)}
           </tbody>
         </table>
-
         {/* DIFFERENTIAL */}
         <h2 className="text-green-700 underline">DIFFERENTIAL BLOOD COUNT</h2>
         <table className="w-full mb-6 border">
@@ -266,12 +346,10 @@ export default function VetReport() {
             )}
           </tbody>
         </table>
-
         {/* BLOOD SMEAR */}
-        <h2 className="section-title text-center">
+        <h2 className="text-green-700 underline">
           BLOOD SMEAR – HAEMOPROTOZOAN
         </h2>
-
         <div className="border rounded mb-6">
           {bloodSmearHaemoprotozoan.results?.map((item, i) => (
             <div
@@ -287,7 +365,7 @@ export default function VetReport() {
                   n.bloodSmearHaemoprotozoan.results[i].result = e.target.value;
                   setData(n);
                 }}
-                className={`w-32 text-center font-bold bg-transparent outline-none border-b
+                className={`w-32 text-center font-bold bg-transparent outline-none 
                   ${
                     item.result === "Positive"
                       ? "text-red-600 border-red-500"
@@ -300,17 +378,14 @@ export default function VetReport() {
             </div>
           ))}
         </div>
-
-        {/* REMARKS */}
         {/* REMARKS */}
         <div className="text-xs mt-4">
           <p className="font-bold text-red-700 mb-1">Remark:</p>
-
           {bloodSmearHaemoprotozoan.remarks?.map((r, i) => (
             <textarea
               key={i}
-              value={r}
               rows={2}
+              value={r}
               onChange={(e) => {
                 const newData = structuredClone(data);
                 newData.bloodSmearHaemoprotozoan.remarks[i] = e.target.value;
@@ -320,8 +395,8 @@ export default function VetReport() {
             />
           ))}
 
+          {/* ADVICE */}
           <p className="font-bold mt-3 mb-1">Advice:</p>
-
           <ul className="list-disc ml-5">
             {bloodSmearHaemoprotozoan.advised?.map((a, i) => (
               <li key={i}>
@@ -338,11 +413,28 @@ export default function VetReport() {
               </li>
             ))}
           </ul>
+
+          {/* NOTE */}
+          <p className="font-bold mt-3 mb-1">Note:</p>
+          <ul className="list-disc ml-5">
+            {bloodSmearHaemoprotozoan.note?.map((n, i) => (
+              <li key={i}>
+                <input
+                  value={n}
+                  onChange={(e) => {
+                    const newData = structuredClone(data);
+                    newData.bloodSmearHaemoprotozoan.note[i] = e.target.value;
+                    setData(newData);
+                  }}
+                  className="w-full bg-transparent outline-none italic text-gray-600"
+                />
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* FOOTER */}
-
-        <div className="mt-10 flex justify-between border-t pt-6 text-xs">
+        {/* <div className="mt-10 flex justify-between border-t pt-6 text-xs">
           <div>
             Printed By:{" "}
             <input
@@ -389,7 +481,7 @@ export default function VetReport() {
               className="bg-transparent outline-none text-center block mt-1"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

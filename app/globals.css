@@ -10,3 +10,43 @@
 .pdf-safe thead {
   background-color: #e5e7eb !important; /* light gray */
 }
+@media print {
+  @page {
+    margin: 10mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* hide everything except report */
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+}
+@page {
+  margin: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  /* Browser ka header + footer (URL, date) hatane ke liye */
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
