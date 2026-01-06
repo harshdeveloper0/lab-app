@@ -67,23 +67,46 @@ const reportData = {
       { test: "Basophils", result: 0.0, unit: "thou/mm3", referenceRange: "0 - 0.29" },
     ],
   },
-  biochemistry: {
-    serumTests: [
-      { test: "Glucose", result: 82, unit: "mg/dL", referenceRange: "70 - 110" },
-      { test: "Blood Urea", result: 34, unit: "mg/dL", referenceRange: "15 - 45" },
-      { test: "Creatinine", result: 1.1, unit: "mg/dL", referenceRange: "0.6 - 1.5" },
-      { test: "Total Protein", result: 6.8, unit: "g/dL", referenceRange: "6.0 - 8.0" },
-      { test: "Albumin", result: 3.4, unit: "g/dL", referenceRange: "3.0 - 4.5" },
-      { test: "Globulin", result: 3.4, unit: "g/dL", referenceRange: "2.5 - 4.0" },
-      { test: "A/G Ratio", result: 1.0, unit: "", referenceRange: "0.8 - 2.0" },
-      { test: "Total Bilirubin", result: 0.6, unit: "mg/dL", referenceRange: "0.2 - 1.2" },
-      { test: "SGOT (AST)", result: 72, unit: "U/L", referenceRange: "20 - 100" },
-      { test: "SGPT (ALT)", result: 34, unit: "U/L", referenceRange: "15 - 45" },
-      { test: "Alkaline Phosphatase (ALP)", result: 168, unit: "U/L", referenceRange: "100 - 350" },
-      { test: "Calcium", result: 9.4, unit: "mg/dL", referenceRange: "8.0 - 11.5" },
-      { test: "Phosphorus", result: 4.6, unit: "mg/dL", referenceRange: "3.0 - 6.5" }
-    ]
-  },
+biochemistry: {
+  serumTests: [
+    { test: "Albumin (ALB)", result: 4.0, unit: "g/dL", referenceRange: "3.5 - 5.5" },
+    { test: "Total Protein (TP)", result: 7.9, unit: "g/dL", referenceRange: "6.0 - 8.5" },
+    { test: "Globulin (GLOB)", result: 3.9, unit: "g/dL", referenceRange: "2.0 - 4.0" },
+    { test: "A/G Ratio", result: 1.02, unit: "", referenceRange: "1.20 - 2.40" },
+
+    { test: "Total Bilirubin (TB)", result: 0.4, unit: "mg/dL", referenceRange: "0.2 - 1.2" },
+    { test: "Direct Bilirubin (DB)", result: 0.2, unit: "mg/dL", referenceRange: "0.0 - 0.4" },
+    { test: "Indirect Bilirubin (IB)", result: 0.2, unit: "mg/dL", referenceRange: "-" },
+
+    { test: "Gamma GT (GGT)", result: 52, unit: "U/L", referenceRange: "7 - 32" },
+    { test: "SGOT / AST", result: 152, unit: "U/L", referenceRange: "12 - 75" },
+    { test: "SGPT / ALT", result: 55, unit: "U/L", referenceRange: "7 - 40" },
+    { test: "Alkaline Phosphatase (ALP)", result: 49, unit: "U/L", referenceRange: "40 - 150" },
+
+    { test: "Cholesterol (Total)", result: 180, unit: "mg/dL", referenceRange: "50 - 120" },
+    { test: "Triglycerides (TG)", result: 55, unit: "mg/dL", referenceRange: "0 - 146" },
+    { test: "HDL Cholesterol", result: 143, unit: "mg/dL", referenceRange: "50 - 60" },
+    { test: "LDL Cholesterol", result: 158, unit: "mg/dL", referenceRange: "19 - 121" },
+    { test: "VLDL", result: 0.29, unit: "mmol/L", referenceRange: "-" },
+    { test: "TC / HDL Ratio", result: 2.18, unit: "", referenceRange: "-" },
+
+    { test: "Amylase (AMY)", result: 143, unit: "U/L", referenceRange: "20 - 110" },
+    { test: "Creatine Kinase (CPK)", result: 300, unit: "U/L", referenceRange: "24 - 170" },
+
+    { test: "Creatinine", result: 1.06, unit: "mg/dL", referenceRange: "0.40 - 0.91" },
+    { test: "Uric Acid (UA)", result: 6.02, unit: "mg/dL", referenceRange: "2.6 - 6.0" },
+    { test: "Urea", result: 32, unit: "mg/dL", referenceRange: "15 - 45" },
+    { test: "BUN / Creatinine Ratio", result: 57.34, unit: "", referenceRange: "24.00 - 155.00" },
+
+    { test: "Calcium", result: 70, unit: "mg/dL", referenceRange: "70 - 110" },
+
+    { test: "Sodium (Na)", result: 143, unit: "mmol/L", referenceRange: "136 - 149" },
+    { test: "Potassium (K)", result: 4.38, unit: "mmol/L", referenceRange: "3.5 - 5.5" },
+
+    { test: "Total Bile Acids (TBA)", result: ">120.00", unit: "µmol/L", referenceRange: "1.00 - 11.00" }
+  ]
+},
+
 
   bloodSmearHaemoprotozoan: {
     results: [
