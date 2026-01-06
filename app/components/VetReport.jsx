@@ -311,7 +311,8 @@ export default function VetReport() {
         </table>
 
         {/* BIOCHEMISTRY */}
-        <h2 className="text-center font-bold text-xl underline mb-2">
+    
+        <h2 className="text-green-700 underline">
           BIOCHEMISTRY
         </h2>
 
