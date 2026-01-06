@@ -12,7 +12,7 @@ export default function HomePage() {
     <main className="p-4">
       <div className="bg-white mt-6">
         <Preview/>
-       <VetReport/>
+       {/* <VetReport/> */}
       </div>
     </main>
   );
