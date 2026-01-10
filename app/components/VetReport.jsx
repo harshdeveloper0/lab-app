@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import reportData from "../data/reportData";
+// import reportData from "../data/reportData";
 import Image from "next/image";
 
 export default function VetReport() {
@@ -317,14 +317,14 @@ export default function VetReport() {
         </h2>
 
         <table className="w-full mb-6 border">
-          <thead className="bg-green-400">
+          {/* <thead className="bg-green-400">
             <tr>
               <th>Test</th>
               <th>Result</th>
               <th>Unit</th>
               <th>Range</th>
             </tr>
-          </thead>
+          </thead> */}
           <tbody>
             {renderRows("biochemistry", "serumTests", biochemistry.serumTests)}
           </tbody>
