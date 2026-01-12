@@ -11,9 +11,8 @@ export default function HomePage() {
   return (
     <main className="p-4">
       <div className="bg-white mt-6">
-        {/* <Preview/> */}
+        <Preview/>
        {/* <VetReport/> */}
-       .........
       </div>
     </main>
   );
