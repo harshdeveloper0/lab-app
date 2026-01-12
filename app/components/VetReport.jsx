@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-// import reportData from "../data/reportData";
+import reportData from "../data/reportData";
 import Image from "next/image";
 
 export default function VetReport() {
