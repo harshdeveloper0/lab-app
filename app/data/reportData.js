@@ -11,7 +11,7 @@ const reportData = {
     },
     contact: {
       mobile: ["9984980785", "9214725401"],
-      email: "ganeshgupta832@gmail.com",
+      email: "happypawsvetlab@gmail.com",
     },
     logo: {
       required: true,
@@ -248,7 +248,7 @@ const reportData = {
         test: "Calcium",
         result: 70,
         unit: "mg/dL",
-        referenceRange: "70 - 110",
+        referenceRange: "8.5 - 10.5",
       },
       {
         test: "Sodium (Na)",
@@ -272,7 +272,7 @@ const reportData = {
         test: "Phosphorus (P)",
         result: "--",
         unit: "mg/dL",
-        referenceRange: "2.5 - 4.5",
+        referenceRange: "4.0 - 6.0",
       },
 
       {
