@@ -76,7 +76,7 @@ export default function VetReport() {
                   field,
                   index,
                   "referenceRange",
-                  e.target.value
+                  e.target.value,
                 )
               }
               className="w-full bg-transparent outline-none text-center"
@@ -97,81 +97,80 @@ export default function VetReport() {
 
       <div className="relative z-10">
         {/* HEADER */}
-       {/* HEADER */}
-<div className="text-center border-b-2 border-blue-900 pb-4 mb-6">
-  {/* LOGO */}
-  <div className="flex justify-center mb-2">
-    <Image
-      src="/logo.png"
-      alt="Lab Logo"
-      width={120}
-      height={120}
-      priority
-      className="object-contain"
-    />
-  </div>
+        {/* HEADER */}
+        <div className="text-center border-b-2 border-blue-900 pb-4 mb-6">
+          {/* LOGO */}
+          <div className="flex justify-center mb-2">
+            <Image
+              src="/logo.png"
+              alt="Lab Logo"
+              width={120}
+              height={120}
+              priority
+              className="object-contain"
+            />
+          </div>
 
-  {/* LAB NAME */}
-  <input
-    value={header.labName || ""}
-    onChange={(e) => {
-      const n = structuredClone(data);
-      n.header.labName = e.target.value;
-      setData(n);
-    }}
-    className="text-3xl font-bold text-blue-900 uppercase text-center w-full bg-transparent outline-none"
-  />
+          {/* LAB NAME */}
+          <input
+            value={header.labName || ""}
+            onChange={(e) => {
+              const n = structuredClone(data);
+              n.header.labName = e.target.value;
+              setData(n);
+            }}
+            className="text-3xl font-bold text-blue-900 uppercase text-center w-full bg-transparent outline-none"
+          />
 
-  {/* TAGLINE */}
-  <input
-    value={header.tagline || ""}
-    onChange={(e) => {
-      const n = structuredClone(data);
-      n.header.tagline = e.target.value;
-      setData(n);
-    }}
-    className="italic text-gray-600 text-center w-full bg-transparent outline-none mt-1"
-  />
+          {/* TAGLINE */}
+          <input
+            value={header.tagline || ""}
+            onChange={(e) => {
+              const n = structuredClone(data);
+              n.header.tagline = e.target.value;
+              setData(n);
+            }}
+            className="italic text-gray-600 text-center w-full bg-transparent outline-none mt-1"
+          />
 
-  {/* ADDRESS */}
-  <textarea
-    rows={2}
-    value={header.address || ""}
-    onChange={(e) => {
-      const n = structuredClone(data);
-      n.header.address = e.target.value;
-      setData(n);
-    }}
-    className="text-xs text-center w-full bg-transparent outline-none resize-none mt-1"
-  />
+          {/* ADDRESS */}
+          <textarea
+            rows={2}
+            value={header.address || ""}
+            onChange={(e) => {
+              const n = structuredClone(data);
+              n.header.address = e.target.value;
+              setData(n);
+            }}
+            className="text-xs text-center w-full bg-transparent outline-none resize-none mt-1"
+          />
 
-  {/* CONTACT */}
-  <div className="text-sm font-semibold mt-1 flex justify-center gap-2">
-    <input
-      value={header.contact?.mobile?.join(" / ") || ""}
-      onChange={(e) => {
-        const n = structuredClone(data);
-        n.header.contact.mobile = e.target.value
-          .split("/")
-          .map((m) => m.trim());
-        setData(n);
-      }}
-      className="bg-transparent outline-none text-center w-64"
-    />
-    <span>|</span>
-    <input
-      value={header.contact?.email || ""}
-      onChange={(e) => {
-        const n = structuredClone(data);
-        n.header.contact.email = e.target.value;
-        setData(n);
-      }}
-      className="bg-transparent outline-none text-center w-64"
-    />
-  </div>
-</div>
+          {/* CONTACT */}
+          <div className="text-sm font-semibold mt-1 flex justify-center gap-2">
+            <input
+              value={header.contact?.mobile?.join(" / ") || ""}
+              onChange={(e) => {
+                const n = structuredClone(data);
+                n.header.contact.mobile = e.target.value
+                  .split("/")
+                  .map((m) => m.trim());
+                setData(n);
+              }}
+              className="bg-transparent outline-none text-center w-64"
+            />
+            <span>|</span>
+            <input
+              value={header.contact?.email || ""}
+              onChange={(e) => {
+                const n = structuredClone(data);
+                n.header.contact.email = e.target.value;
+                setData(n);
+              }}
+              className="bg-transparent outline-none text-center w-64"
+            />
+          </div>
+        </div>
 
-        
         {/* PATIENT DETAILS */}
         <div className="grid grid-cols-2 gap-y-2 gap-x-6 border p-4 bg-gray-50 rounded mb-6 text-sm">
           <p>
@@ -305,16 +304,14 @@ export default function VetReport() {
             {renderRows(
               "hematology",
               "completeBloodCount",
-              hematology.completeBloodCount
+              hematology.completeBloodCount,
             )}
           </tbody>
         </table>
 
         {/* BIOCHEMISTRY */}
-    
-        <h2 className="text-green-700 underline">
-          BIOCHEMISTRY
-        </h2>
+
+        <h2 className="text-green-700 underline">BIOCHEMISTRY</h2>
 
         <table className="w-full mb-6 border">
           {/* <thead className="bg-green-400">
@@ -343,7 +340,7 @@ export default function VetReport() {
             {renderRows(
               "hematology",
               "differentialBloodCount",
-              hematology.differentialBloodCount
+              hematology.differentialBloodCount,
             )}
           </tbody>
         </table>
@@ -435,7 +432,9 @@ export default function VetReport() {
         </div>
 
         {/* FOOTER */}
-        {/* <div className="mt-10 flex justify-between border-t pt-6 text-xs">
+        {/* FOOTER */}
+        <div className="mt-10 flex justify-between border-t pt-6 text-xs">
+          {/* LEFT SIDE */}
           <div>
             Printed By:{" "}
             <input
@@ -459,7 +458,19 @@ export default function VetReport() {
             />
           </div>
 
+          {/* RIGHT SIDE */}
           <div className="text-center">
+            {/* SIGNATURE IMAGE */}
+            <div className="flex justify-center mb-2">
+              <Image
+                src="/signature.png"
+                alt="Signature"
+                width={120}
+                height={60}
+                className="object-contain"
+              />
+            </div>
+
             <div className="w-32 border-b mx-auto mb-1"></div>
 
             <input
@@ -482,7 +493,7 @@ export default function VetReport() {
               className="bg-transparent outline-none text-center block mt-1"
             />
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
