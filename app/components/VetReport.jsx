@@ -116,96 +116,58 @@ export default function VetReport() {
         />
       </div>
 
-      {/* PATIENT DETAILS */}
-      <div className="grid grid-cols-2 gap-4 border p-4 rounded bg-gray-50 mb-6">
-        <p>
-          <strong>Name:</strong>{" "}
-          <input
-            value={patientDetails.name}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.name = e.target.value;
-              setData(n);
-            }}
-            className="bg-transparent outline-none w-40"
-          />
-        </p>
+    
+   {/* PATIENT DETAILS */}
+<div className="border rounded-lg p-6 mb-8 text-sm">
+  <div className="grid grid-cols-2 gap-y-6 gap-x-12">
 
-        <p>
-          <strong>Age / Sex:</strong>{" "}
-          <input
-            value={patientDetails.age}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.age = e.target.value;
-              setData(n);
-            }}
-            className="bg-transparent outline-none w-20"
-          />{" "}
-          /{" "}
-          <input
-            value={patientDetails.sex}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.sex = e.target.value;
-              setData(n);
-            }}
-            className="bg-transparent outline-none w-20"
-          />
-        </p>
+    {/* NAME */}
+    <div>
+      <span className="font-semibold">Name:</span>{" "}
+      <span>{patientDetails.name}</span>
+    </div>
 
-        {/* ADDRESS */}
-        <p className="col-span-2">
-          <strong>Address:</strong>
-          <textarea
-            rows={2}
-            value={patientDetails.address || ""}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.address = e.target.value;
-              setData(n);
-            }}
-            className="w-full bg-transparent outline-none resize-none mt-1"
-            placeholder="Enter full address"
-          />
-        </p>
+    {/* AGE / SEX */}
+    <div className="text-right">
+      <span className="font-semibold">Age / Sex:</span>{" "}
+      <span>
+        {patientDetails.age} / {patientDetails.sex}
+      </span>
+    </div>
 
-        <p>
-          <strong>Species / Breed:</strong>{" "}
-          <input
-            value={patientDetails.species}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.species = e.target.value;
-              setData(n);
-            }}
-            className="bg-transparent outline-none w-24"
-          />{" "}
-          /{" "}
-          <input
-            value={patientDetails.breed}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.breed = e.target.value;
-              setData(n);
-            }}
-            className="bg-transparent outline-none w-24"
-          />
-        </p>
+    {/* ADDRESS (FULL WIDTH – CLEAN) */}
+    <div className="col-span-2">
+      <span className="font-semibold block mb-1">Address:</span>
+      <textarea
+        rows={2}
+        value={patientDetails.address || ""}
+        onChange={(e) => {
+          const n = structuredClone(data);
+          n.patientDetails.address = e.target.value;
+          setData(n);
+        }}
+        className="w-full bg-transparent outline-none resize-none border-b border-gray-400"
+        placeholder="Enter full address"
+      />
+    </div>
 
-        <p>
-          <strong>Ref By:</strong>{" "}
-          <input
-            value={patientDetails.refBy}
-            onChange={(e) => {
-              const n = structuredClone(data);
-              n.patientDetails.refBy = e.target.value;
-              setData(n);
-            }}
-            className="bg-transparent outline-none w-48"
-          />
-        </p>
-      </div>
+    {/* SPECIES / BREED */}
+    <div>
+      <span className="font-semibold">Species / Breed:</span>{" "}
+      <span>
+        {patientDetails.species} / {patientDetails.breed}
+      </span>
+    </div>
+
+    {/* REF BY */}
+    <div className="text-right">
+      <span className="font-semibold">Ref By:</span>{" "}
+      <span>{patientDetails.refBy}</span>
+    </div>
+
+  </div>
+</div>
+
 
       {/* HEMATOLOGY */}
       <h2 className="font-bold text-center underline mb-2">HEMATOLOGY</h2>
