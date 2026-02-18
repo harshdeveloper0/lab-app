@@ -28,7 +28,7 @@ const reportData = {
     species: "Cow",
     breed: "HF",
     color: null,
-    labNumber: "Near Sonda Chauraha (Pipra Chandrabhan Road, Deoria, U.P.)",
+    address: "Near Sonda Chauraha (Pipra Chandrabhan Road, Deoria, U.P.)",
     registrationDate: "02-09-2024 12:37:16",
     sampleDate: "02-09-2024 12:37:16",
     reportedDate: "02-09-2024 14:58:26",
