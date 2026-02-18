@@ -187,7 +187,7 @@ export default function VetReport() {
           </p>
 
           <p>
-            <strong>Lab No:</strong>{" "}
+            <strong>Address:</strong>{" "}
             <input
               value={patientDetails.address || ""}
               onChange={(e) => {
