@@ -116,7 +116,6 @@ export default function VetReport() {
         />
       </div>
 
-    
 {/* PATIENT DETAILS */}
 <div className="border rounded-lg p-6 mb-8 text-sm">
   <div className="grid grid-cols-2 gap-y-6 gap-x-12">
@@ -131,12 +130,12 @@ export default function VetReport() {
           n.patientDetails.name = e.target.value;
           setData(n);
         }}
-        className="w-full bg-transparent outline-none border-b border-gray-400"
+        className="w-full bg-transparent outline-none"
       />
     </div>
 
     {/* AGE / SEX */}
-    <div className="flex justify-end gap-2">
+    <div className="flex justify-end gap-6">
       <div>
         <label className="font-semibold">Age:</label>
         <input
@@ -146,7 +145,7 @@ export default function VetReport() {
             n.patientDetails.age = e.target.value;
             setData(n);
           }}
-          className="w-24 bg-transparent outline-none border-b border-gray-400 text-right"
+          className="w-20 bg-transparent outline-none text-right"
         />
       </div>
 
@@ -159,12 +158,12 @@ export default function VetReport() {
             n.patientDetails.sex = e.target.value;
             setData(n);
           }}
-          className="w-24 bg-transparent outline-none border-b border-gray-400 text-right"
+          className="w-20 bg-transparent outline-none text-right"
         />
       </div>
     </div>
 
-    {/* ADDRESS */}
+    {/* ADDRESS (ONLY THIS UNDERLINED) */}
     <div className="col-span-2">
       <label className="font-semibold block mb-1">Address:</label>
       <textarea
@@ -175,7 +174,7 @@ export default function VetReport() {
           n.patientDetails.address = e.target.value;
           setData(n);
         }}
-        className="w-full bg-transparent outline-none resize-none border-b border-gray-400"
+        className="w-full bg-transparent outline-none resize-none border-b border-black"
       />
     </div>
 
@@ -190,7 +189,7 @@ export default function VetReport() {
             n.patientDetails.species = e.target.value;
             setData(n);
           }}
-          className="w-full bg-transparent outline-none border-b border-gray-400"
+          className="w-full bg-transparent outline-none"
         />
       </div>
 
@@ -203,13 +202,13 @@ export default function VetReport() {
             n.patientDetails.breed = e.target.value;
             setData(n);
           }}
-          className="w-full bg-transparent outline-none border-b border-gray-400"
+          className="w-full bg-transparent outline-none"
         />
       </div>
     </div>
 
     {/* REF BY */}
-    <div>
+    <div className="text-right">
       <label className="font-semibold">Ref By:</label>
       <input
         value={patientDetails.refBy || ""}
@@ -218,13 +217,12 @@ export default function VetReport() {
           n.patientDetails.refBy = e.target.value;
           setData(n);
         }}
-        className="w-full bg-transparent outline-none border-b border-gray-400 text-right"
+        className="w-full bg-transparent outline-none text-right"
       />
     </div>
 
   </div>
 </div>
-
 
 
       {/* HEMATOLOGY */}
