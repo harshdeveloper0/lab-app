@@ -28,7 +28,7 @@ const reportData = {
     species: "Cow",
     breed: "HF",
     color: null,
-    labNumber: "M13130496",
+    labNumber: "Near Sonda Chauraha (Pipra Chandrabhan Road, Deoria, U.P.)",
     registrationDate: "02-09-2024 12:37:16",
     sampleDate: "02-09-2024 12:37:16",
     reportedDate: "02-09-2024 14:58:26",
@@ -86,7 +86,7 @@ const reportData = {
       { test: "Lymphocytes", result: 63, unit: "%", referenceRange: "48 - 75" },
       { test: "Monocytes", result: 3, unit: "%", referenceRange: "3 - 11" },
       { test: "Eosinophils", result: 4, unit: "%", referenceRange: "0 - 7" },
-      { test: "Basophils", result: 0, unit: "%", referenceRange: "0 - 3" },
+      { test: "Granulocytes", result: 0, unit: "%", referenceRange: "66.0%" },
     ],
 
     absoluteLeucocyteCount: [
