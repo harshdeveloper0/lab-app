@@ -189,7 +189,7 @@ export default function VetReport() {
           <p>
             <strong>Lab No:</strong>{" "}
             <input
-              value={patientDetails.labNumber || ""}
+              value={patientDetails.address || ""}
               onChange={(e) => {
                 const n = structuredClone(data);
                 n.patientDetails.labNumber = e.target.value;
