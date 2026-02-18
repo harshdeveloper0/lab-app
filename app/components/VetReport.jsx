@@ -117,27 +117,56 @@ export default function VetReport() {
       </div>
 
     
-   {/* PATIENT DETAILS */}
+{/* PATIENT DETAILS */}
 <div className="border rounded-lg p-6 mb-8 text-sm">
   <div className="grid grid-cols-2 gap-y-6 gap-x-12">
 
     {/* NAME */}
     <div>
-      <span className="font-semibold">Name:</span>{" "}
-      <span>{patientDetails.name}</span>
+      <label className="font-semibold">Name:</label>
+      <input
+        value={patientDetails.name || ""}
+        onChange={(e) => {
+          const n = structuredClone(data);
+          n.patientDetails.name = e.target.value;
+          setData(n);
+        }}
+        className="w-full bg-transparent outline-none border-b border-gray-400"
+      />
     </div>
 
     {/* AGE / SEX */}
-    <div className="text-right">
-      <span className="font-semibold">Age / Sex:</span>{" "}
-      <span>
-        {patientDetails.age} / {patientDetails.sex}
-      </span>
+    <div className="flex justify-end gap-2">
+      <div>
+        <label className="font-semibold">Age:</label>
+        <input
+          value={patientDetails.age || ""}
+          onChange={(e) => {
+            const n = structuredClone(data);
+            n.patientDetails.age = e.target.value;
+            setData(n);
+          }}
+          className="w-24 bg-transparent outline-none border-b border-gray-400 text-right"
+        />
+      </div>
+
+      <div>
+        <label className="font-semibold">Sex:</label>
+        <input
+          value={patientDetails.sex || ""}
+          onChange={(e) => {
+            const n = structuredClone(data);
+            n.patientDetails.sex = e.target.value;
+            setData(n);
+          }}
+          className="w-24 bg-transparent outline-none border-b border-gray-400 text-right"
+        />
+      </div>
     </div>
 
-    {/* ADDRESS (FULL WIDTH – CLEAN) */}
+    {/* ADDRESS */}
     <div className="col-span-2">
-      <span className="font-semibold block mb-1">Address:</span>
+      <label className="font-semibold block mb-1">Address:</label>
       <textarea
         rows={2}
         value={patientDetails.address || ""}
@@ -147,26 +176,55 @@ export default function VetReport() {
           setData(n);
         }}
         className="w-full bg-transparent outline-none resize-none border-b border-gray-400"
-        placeholder="Enter full address"
       />
     </div>
 
     {/* SPECIES / BREED */}
-    <div>
-      <span className="font-semibold">Species / Breed:</span>{" "}
-      <span>
-        {patientDetails.species} / {patientDetails.breed}
-      </span>
+    <div className="flex gap-2">
+      <div className="flex-1">
+        <label className="font-semibold">Species:</label>
+        <input
+          value={patientDetails.species || ""}
+          onChange={(e) => {
+            const n = structuredClone(data);
+            n.patientDetails.species = e.target.value;
+            setData(n);
+          }}
+          className="w-full bg-transparent outline-none border-b border-gray-400"
+        />
+      </div>
+
+      <div className="flex-1">
+        <label className="font-semibold">Breed:</label>
+        <input
+          value={patientDetails.breed || ""}
+          onChange={(e) => {
+            const n = structuredClone(data);
+            n.patientDetails.breed = e.target.value;
+            setData(n);
+          }}
+          className="w-full bg-transparent outline-none border-b border-gray-400"
+        />
+      </div>
     </div>
 
     {/* REF BY */}
-    <div className="text-right">
-      <span className="font-semibold">Ref By:</span>{" "}
-      <span>{patientDetails.refBy}</span>
+    <div>
+      <label className="font-semibold">Ref By:</label>
+      <input
+        value={patientDetails.refBy || ""}
+        onChange={(e) => {
+          const n = structuredClone(data);
+          n.patientDetails.refBy = e.target.value;
+          setData(n);
+        }}
+        className="w-full bg-transparent outline-none border-b border-gray-400 text-right"
+      />
     </div>
 
   </div>
 </div>
+
 
 
       {/* HEMATOLOGY */}
