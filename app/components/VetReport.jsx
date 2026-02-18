@@ -499,4 +499,3 @@ export default function VetReport() {
   );
 }
 
-patient address ko editable bana, aur pura address likhne pe adha address hide ho jata hai usko bhi thik kar de 
