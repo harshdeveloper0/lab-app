@@ -195,7 +195,7 @@ export default function VetReport() {
                 n.patientDetails.labNumber = e.target.value;
                 setData(n);
               }}
-              className="bg-transparent outline-none w-40"
+              className="bg-transparent outline-none w-full"
             />
           </p>
 
