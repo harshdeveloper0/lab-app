@@ -192,7 +192,7 @@ export default function VetReport() {
               value={patientDetails.address || ""}
               onChange={(e) => {
                 const n = structuredClone(data);
-                n.patientDetails.labNumber = e.target.value;
+                n.patientDetails.address = e.target.value;
                 setData(n);
               }}
               className="bg-transparent outline-none w-40"
