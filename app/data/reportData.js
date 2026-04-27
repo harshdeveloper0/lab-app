@@ -143,6 +143,20 @@ const reportData = {
         referenceRange: "2.0 - 4.0",
       },
       {
+        test: "glucose (GLU)",
+        result: 70-100,
+        unit: "mg/dL",
+        referenceRange: "70-100",
+      },
+      
+      {
+        test: "Enzyme (CHE)",
+        result: 70-100,
+        unit: "mg/dL",
+        referenceRange: "5000-12000",
+      },
+      
+      {
         test: "A/G Ratio",
         result: 1.02,
         unit: "",
@@ -162,16 +176,17 @@ const reportData = {
         referenceRange: "0.0 - 0.4",
       },
       {
-        test: "Indirect Bilirubin (IB)",
+        test: "Bilirubin (IB)",
         result: 0.2,
         unit: "mg/dL",
         referenceRange: "-",
       },
+     
       {
         test: "Gamma GT (GGT)",
         result: 52,
         unit: "U/L",
-        referenceRange: "7 - 32",
+        referenceRange: "7 - 32"
       },
       {
         test: "SGOT / AST",
